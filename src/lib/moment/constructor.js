@@ -43,6 +43,10 @@ export function copyConfig(to, from) {
     if (!isUndefined(from._locale)) {
         to._locale = from._locale;
     }
+    if (from._d && !isUndefined(from._d.getTime)) {
+        to._d = from._d;
+    }
+    
 
     if (momentPropertiesLen > 0) {
         for (i = 0; i < momentPropertiesLen; i++) {
